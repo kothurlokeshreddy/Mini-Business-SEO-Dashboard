@@ -15,7 +15,7 @@ class App extends Component {
   handleFormSubmit = async (data) => {
     this.setState({ loading: true, error: '' });
     try {
-      const url = "http://localhost:5000/business-data";
+      const url = "https://mini-business-seo-dashboard.onrender.com/business-data";
       const res = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -33,7 +33,7 @@ class App extends Component {
     const { query } = this.state;
     try {
       const res = await fetch(
-        `http://localhost:5000/regenerate-headline?businessName=${query.businessName}&location=${query.location}`
+        `https://mini-business-seo-dashboard.onrender.com/regenerate-headline?businessName=${query.businessName}&location=${query.location}`
       );
       const json = await res.json();
       this.setState((prevState) => ({
